@@ -4,14 +4,16 @@ using HotelListing.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HotelListing.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230507091500_AddedIdentity")]
+    partial class AddedIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,8 +125,8 @@ namespace HotelListing.Migrations
                         new
                         {
                             Id = 3,
-                            Name = "Cayman Island",
-                            ShortName = "CI"
+                            Name = "Sri Lanka",
+                            ShortName = "SL"
                         });
                 });
 
@@ -159,22 +161,22 @@ namespace HotelListing.Migrations
                             Id = 1,
                             Address = "Negril",
                             CountryId = 1,
-                            Name = "Sandals Resort and Spa",
+                            Name = "Sundals Resort and Spa",
                             Ratings = 4.5
                         },
                         new
                         {
                             Id = 2,
                             Address = "George Town",
-                            CountryId = 3,
-                            Name = "Comfort Suites",
+                            CountryId = 2,
+                            Name = "Comfort suits",
                             Ratings = 4.2999999999999998
                         },
                         new
                         {
                             Id = 3,
-                            Address = "Nassua",
-                            CountryId = 2,
+                            Address = "Colombo",
+                            CountryId = 3,
                             Name = "Grand Palldium",
                             Ratings = 4.0
                         });
@@ -205,22 +207,6 @@ namespace HotelListing.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "75538bcd-ae9f-4d2d-b20e-96b754966af3",
-                            ConcurrencyStamp = "90d63a17-76b6-4147-98ef-8c5157bdf683",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        },
-                        new
-                        {
-                            Id = "e41b7032-b729-48c0-a214-701d12adfa96",
-                            ConcurrencyStamp = "e09cfdfd-15d6-4a2a-96dc-b5b2b0dfb4be",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
